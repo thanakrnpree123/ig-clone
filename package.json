@@ -15,7 +15,9 @@
     "babel-plugin-import": "^1.13.0",
     "less": "^3.12.2",
     "next": "9.5.1",
+    "next-images": "^1.4.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "url-loader": "^4.1.0"
   }
 }
