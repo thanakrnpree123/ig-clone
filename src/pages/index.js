@@ -1,13 +1,11 @@
-import Navbar from "../components/Navbar/Navbar";
-import Post from "../components/Post/post";
+import LoginPage from "./login/loginPage";
+import { Router } from "react-router";
+import { createBrowserHistory } from "history";
 
 export default function Home() {
   return (
     <div>
-      <Navbar />
-      <div>
-        <Post />
-      </div>
+      <LoginPage />
     </div>
   );
 }

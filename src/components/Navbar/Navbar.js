@@ -2,6 +2,7 @@ import { Menu, Button } from "antd";
 import Link from "next/link";
 import React, { Component } from "react";
 import Img from "../../../public/img.png";
+import auth from "../Firebase";
 
 const NavBrandLogo = {
   display: "block",
@@ -15,6 +16,14 @@ const NavBrandLogo = {
 };
 
 class Navbar extends Component {
+  logout = (e) => {
+    e.preventDefault();
+    auth.signOut().then((response) => {
+      this.setState({
+        authUser: null,
+      });
+    });
+  };
   render() {
     return (
       <div>
@@ -35,8 +44,8 @@ class Navbar extends Component {
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="2">
-                  <Link href="/logout">
-                    <a>Logout</a>
+                  <Link href="/">
+                    <a onClick={this.logout}>Logout</a>
                   </Link>
                 </Menu.Item>
               </Menu>
