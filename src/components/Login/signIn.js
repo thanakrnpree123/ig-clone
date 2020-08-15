@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Form, Input, Button, Card } from "antd";
 import Router from "next/router";
 
-import auth from "../Firebase";
+import * as firebase from "../Firebase";
 import { createBrowserHistory } from "history";
 import { Redirect } from "react-router-dom";
 const INITIAL_STATE = {
@@ -35,7 +35,7 @@ class SignIn extends Component {
     e.preventDefault();
 
     const { email, password } = this.state;
-    auth
+    firebase.auth
       .signInWithEmailAndPassword(email, password)
       .then((response) => {
         this.setState({
